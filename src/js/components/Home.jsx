@@ -41,7 +41,7 @@ const Home = () => {
           </li>
         ))}
       </ul>
-      <div>1 Item left</div>
+      <div>{todos.length} Item left</div>
     </div>
   );
 };
