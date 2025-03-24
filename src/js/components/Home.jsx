@@ -6,7 +6,7 @@ import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
-  const [inputValue, setImputValue] = useState("");
+  const [inputValue, setInputValue] = useState("");
   const [todos, setTodos] = useState([]);
 
   return (
@@ -16,12 +16,12 @@ const Home = () => {
         <li>
           <input
             type="text"
-            onChange={(e) => setImputValue(e.target.value)}
+            onChange={(e) => setInputValue(e.target.value)}
             value={inputValue}
             onKeyPress={(e) => {
               if (e.key === "Enter") {
                 setTodos(todos.concat([inputValue]));
-                setImputValue("");
+                setInputValue("");
               }
             }}
             placeholder="What needs to be done?"
