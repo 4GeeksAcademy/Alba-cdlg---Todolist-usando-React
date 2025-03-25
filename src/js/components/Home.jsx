@@ -8,6 +8,7 @@ import rigoImage from "../../img/rigo-baby.jpg";
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
   const [todos, setTodos] = useState([]);
+  const [hoverIndex, setHoverIndex] = useState(null);
 
   return (
     <div className="container">
@@ -25,19 +26,26 @@ const Home = () => {
               }
             }}
             placeholder="What needs to be done?"
-          ></input>
+          />
         </li>
         {todos.map((item, index) => (
-          <li>
-            {item} {""}
-            <i
-              class="bi bi-x"
-              onClick={() =>
-                setTodos(
-                  todos.filter((t, currentIndex) => index != currentIndex)
-                )
-              }
-            ></i>
+          <li
+            key={index}
+            onMouseEnter={() => setHoverIndex(index)}
+            onMouseLeave={() => setHoverIndex(null)}
+          >
+            {item}{" "}
+            {hoverIndex === index && (
+              <i
+                className="bi bi-x"
+                style={{ cursor: "pointer", color: "black" }}
+                onClick={() =>
+                  setTodos(
+                    todos.filter((t, currentIndex) => index != currentIndex)
+                  )
+                }
+              ></i>
+            )}
           </li>
         ))}
       </ul>
