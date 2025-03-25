@@ -31,6 +31,7 @@ const Home = () => {
         {todos.map((item, index) => (
           <li
             key={index}
+            className={hoverIndex === index ? "todo-item hover" : "todo-item"}
             onMouseEnter={() => setHoverIndex(index)}
             onMouseLeave={() => setHoverIndex(null)}
           >
