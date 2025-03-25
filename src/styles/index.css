@@ -2,6 +2,11 @@ body {
   margin-top: 100px;
 }
 
+.container {
+  border-radius: 1px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
 h1 {
   text-align: center;
 }

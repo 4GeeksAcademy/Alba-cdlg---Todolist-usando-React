@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h1>Todos</h1>
+      <h1>Lista</h1>
       <ul>
         <li>
           <input
@@ -25,7 +25,7 @@ const Home = () => {
                 setInputValue("");
               }
             }}
-            placeholder="What needs to be done?"
+            placeholder="¿Qué tengo que hacer?"
           />
         </li>
         {todos.map((item, index) => (
@@ -50,7 +50,7 @@ const Home = () => {
           </li>
         ))}
       </ul>
-      <div>{todos.length} Item left</div>
+      <div>{todos.length} Tareas pendientes</div>
     </div>
   );
 };
